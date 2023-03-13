@@ -2,18 +2,22 @@
   font-family: regular;
   src: url(../fonts/Regular.ttf);
 }
+@font-face {
+  font-family: bold;
+  src: url(../fonts/Bold.ttf);
+}
 body {
   font-family: "regular", sans-serif;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 0 32px;
   margin: 0 auto;
 }
 
 nav .nav {
-  min-height: 70px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +27,7 @@ nav .nav .nav__mobile_btn {
 }
 nav .nav .nav__menu {
   display: flex;
-  gap: 32px;
+  gap: 42px;
 }
 nav .nav .nav__menu li {
   list-style-type: none;
@@ -106,8 +110,125 @@ nav .nav .nav__btns #login:hover {
   nav .nav .nav__btns svg {
     display: block;
   }
-  nav .nav .nav__btns #book-a-demo, nav .nav .nav__btns #login {
+  nav .nav .nav__btns #book-a-demo,
+  nav .nav .nav__btns #login {
     display: none;
+  }
+}
+
+header .header {
+  width: 100%;
+  height: 755px;
+  background: url(/img/header-background.png) 100%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header .header .header__text {
+  max-width: 470px;
+  margin-left: 115px;
+}
+header .header .header__text span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 19px;
+}
+header .header .header__text h2 {
+  max-width: 470px;
+  font-family: bold;
+  font-size: 54px;
+  line-height: 61px;
+  margin: 0;
+}
+header .header .header__text h2:last-of-type {
+  color: #6f2cff;
+}
+header .header .header__text .email {
+  display: flex;
+}
+header .header .header__text .email input {
+  max-width: 268px;
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #6f2cff;
+  border-radius: 27.5px 0px 0px 27.5px;
+  padding: 13px 127px 11px 26px;
+}
+header .header .header__text .email button {
+  max-width: 187px;
+  height: 45px;
+  background: #6f2cff;
+  border-radius: 0px 27.5px 27.5px 0px;
+  padding: 13px 45px;
+  font-size: 15px;
+  color: #ffffff;
+  border: 1px solid #6f2cff;
+}
+header .header .header__text p {
+  max-width: 438px;
+  font-family: regular;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 37px;
+  margin-bottom: 4px;
+}
+@media screen and (max-width: 768px) {
+  header .header .header__text {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 520px) {
+  header .header .header__text .email {
+    display: flex;
+  }
+  header .header .header__text .email input {
+    max-width: 230px;
+    padding: 13px 50px 11px 26px;
+  }
+  header .header .header__text .email button {
+    max-width: 130px;
+    padding: 13px;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .header .header__text {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+  }
+  header .header .header__text span {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+  header .header .header__text h2 {
+    max-width: 380px;
+    font-size: 40px;
+    line-height: 51px;
+  }
+  header .header .header__text h2:last-of-type {
+    color: #6f2cff;
+  }
+  header .header .header__text p {
+    max-width: 350px;
+    font-size: 17px;
+    line-height: 30px;
+    margin-top: 17px;
+    margin-bottom: 10px;
+  }
+  header .header .header__text .email {
+    display: flex;
+    justify-content: center;
+  }
+  header .header .header__text .email input {
+    max-width: 200px;
+    padding: 10px 13px;
+  }
+  header .header .header__text .email button {
+    max-width: 147px;
+    padding: 10px;
+    font-size: 14px;
   }
 }
 
@@ -128,8 +249,10 @@ ul {
 }
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -164,9 +287,12 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -174,8 +300,10 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -192,10 +320,13 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+          text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -213,8 +344,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -264,10 +397,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -275,7 +412,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -284,7 +422,8 @@ input { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -326,12 +465,18 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -354,8 +499,10 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -378,8 +525,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive

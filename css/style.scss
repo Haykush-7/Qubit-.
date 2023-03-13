@@ -15,152 +15,300 @@ $mobileS : 420px;
 $br : 30px;
 
 @font-face {
-    font-family: regular;
-    src: url(../fonts/Regular.ttf);
+  font-family: regular;
+  src: url(../fonts/Regular.ttf);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(../fonts/Bold.ttf)
 }
 
 body {
-    font-family: "regular", sans-serif;
+  font-family: "regular", sans-serif;
 }
 
 .container {
-    max-width: 1200px;
-    padding: 0 32px;
-    margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 32px;
+  margin: 0 auto;
 }
 
 nav {
-    .nav {
-        min-height: 70px;
+  .nav {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav__mobile_btn {
+      display: none;
+    }
+
+    .nav__menu {
+      display: flex;
+      gap: 42px;
+
+      li {
+        list-style-type: none;
+
+        a {
+          color: $lightBlack;
+          text-decoration: none;
+          font-size: 14px;
+          transition: .5s;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .nav__btns {
+      display: flex;
+      gap: unset;
+
+      svg {
+        display: none;
+        width: 35px;
+        height: 35px;
+      }
+
+      #book-a-demo {
+        padding: 9px 35px;
+        color: $white;
+        background-color: $primary;
+        border-radius: 20px;
+        border: 1px solid $primary;
+        cursor: pointer;
+        font-size: 14px;
+
+      }
+
+      #login {
+        text-decoration: none;
+        color: $lightBlack;
+        font-size: 14px;
+        display: inline-block;
+        padding: 9px 15px;
+        transition: .5s;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    @media screen and (max-width:1085px) {
+      .nav__menu {
+        gap: 16px;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      .logo {
+        svg {
+
+          width: 70px;
+          height: 22px;
+        }
+      }
+
+      .nav__btns {
+        gap: 5px;
+
+        #book-a-demo {
+          font-size: 13px;
+          padding: 6px 20px;
+        }
+
+        #login {
+          font-size: 13px;
+          padding: 5px 2px;
+        }
+      }
+
+      .nav__menu {
+        gap: 8px;
+
+        li {
+          a {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width:$mobileL) {
+      .nav__menu {
+        display: none;
+      }
+
+      .nav__mobile_btn {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: $mobileS) {
+      .nav__btns {
+
+        svg {
+          display: block;
+        }
+
+        #book-a-demo,
+        #login {
+          display: none;
+
+        }
+      }
+    }
+  }
+}
+
+
+
+header {
+  .header {
+    width: 100%;
+    height: 755px;
+    background: url(/img/header-background.png) 100%;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .header__text {
+      max-width: 470px;
+      margin-left: 115px;
+
+      span {
+        display: block;
+        font-size: 15px;
+        padding-bottom: 19px;
+      }
+
+      h2 {
+        max-width: 470px;
+        font-family: bold;
+        font-size: 54px;
+        line-height: 61px;
+        margin: 0;
+
+        &:last-of-type {
+          color: $primary;
+        }
+      }
+
+      .email {
         display: flex;
-        align-items:center;
-        justify-content: space-between;
-        
-        .nav__mobile_btn {
-            display: none;
+
+        input {
+          max-width: 268px;
+          height: 45px;
+          background: $white;
+          border: 1px solid $primary;
+          border-radius: 27.5px 0px 0px 27.5px;
+          padding: 13px 127px 11px 26px;
         }
 
-        .nav__menu {
-            display: flex;
-            gap: 32px;
-
-                li{
-                    list-style-type: none;
-
-                    a{
-                        color: $lightBlack;
-                        text-decoration: none;
-                        font-size: 14px;
-                        transition: .5s;
-
-                        &:hover{
-                            color: $primary;
-                        }
-                    }
-                }
-            }
-
-            .nav__btns {
-                display: flex;
-                gap: unset;
-
-                svg {
-                    display: none;
-                    width: 35px;
-                    height: 35px;
-                }
-                
-                #book-a-demo {
-                    padding: 9px 35px;
-                    color: $white;
-                    background-color: $primary;
-                    border-radius: 20px;
-                    border: 1px solid $primary;
-                    cursor: pointer;
-                    font-size: 14px;
-
-                }
-
-                #login {
-                    text-decoration: none;
-                    color: $lightBlack;
-                    font-size: 14px;
-                    display: inline-block;
-                    padding: 9px 15px;
-                    transition: .5s;
-
-                    &:hover{
-                        color: $primary;
-                    }
-                }
-            }
-
-            @media screen and (max-width:1085px) {
-                .nav__menu {
-                    gap: 16px;
-                }
-            }
-
-            @media screen and (max-width: $tablet) {
-                .logo {
-                    svg{
-
-                        width: 70px;
-                        height: 22px;
-                    }
-                }
-
-                .nav__btns {
-                    gap: 5px;
-
-                    #book-a-demo { 
-                        font-size: 13px;
-                        padding: 6px 20px;
-                    }
-
-                    #login {
-                        font-size: 13px;
-                        padding: 5px 2px;
-                    }
-                }
-
-                .nav__menu {
-                    gap: 8px;
-
-                    li {
-                        a {
-                            font-size: 13px;
-                        }
-                    }
-                }
-            }
-
-            @media screen and (max-width:$mobileL) {
-                .nav__menu {
-                    display: none;
-                }
-                .nav__mobile_btn{
-                    display: block;
-                }
-            }
-
-            @media screen and (max-width: $mobileS) {
-                .nav__btns {
-
-                    svg{
-                        display: block;
-                    }
-                    
-                    #book-a-demo, #login {
-                        display: none;
-    
-                    }
-                }
-            }
+        button {
+          max-width: 187px;
+          height: 45px;
+          background: $primary;
+          border-radius: 0px 27.5px 27.5px 0px;
+          padding: 13px 45px;
+          font-size: 15px;
+          color: $white;
+          border: 1px solid $primary;
         }
+      }
+
+      p {
+        max-width: 438px;
+        font-family: regular;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 37px;
+        margin-bottom: 4px;
+      }
+    }
+
+    @media screen and (max-width: $mobileL) {
+      .header__text {
+        margin: auto;
+      }
+    }
+
+    @media screen and (max-width: $mobileM) {
+      .header__text {
+        .email {
+          display: flex;
+
+          input {
+            max-width: 230px;
+            padding: 13px 50px 11px 26px;
+          }
+  
+          button {
+            max-width: 130px;
+            padding: 13px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileS) {
+      .header__text {
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+  
+        span {
+          display: block;
+          font-size: 14px;
+          padding-bottom: 15px;
+        }
+  
+        h2 {
+          max-width: 380px;
+          font-size: 40px;
+          line-height: 51px;
+  
+          &:last-of-type {
+            color: $primary;
+          }
+        }
+  
+        p {
+          max-width: 350px;
+          font-size: 17px;
+          line-height: 30px;
+          margin-top: 17px;
+          margin-bottom: 10px;
+        }
+        .email {
+          display: flex;
+
+          justify-content: center;
+          input {
+            max-width: 200px;
+            padding: 10px  13px;
+          }
+  
+          button {
+            max-width: 147px;
+            padding: 10px;
+            font-size: 14px;
+          }
+        }
+      }
     }
 
 
+  }
+}
 
 
 
@@ -170,7 +318,9 @@ nav {
 
 
 
-    
+
+
+
 
 //normalize css
 
@@ -184,17 +334,19 @@ nav {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 * {
-    box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -235,9 +387,12 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -246,8 +401,10 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -267,9 +424,12 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -289,8 +449,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -346,10 +508,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -358,7 +524,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -368,7 +535,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -416,12 +584,18 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -447,8 +621,10 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -476,8 +652,10 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -517,4 +695,3 @@ template {
 [hidden] {
   display: none;
 }
-
