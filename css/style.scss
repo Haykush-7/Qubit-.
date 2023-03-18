@@ -71,6 +71,7 @@ nav {
     .nav__btns {
       display: flex;
       gap: unset;
+      align-items: center;
 
       svg {
         display: none;
@@ -142,7 +143,7 @@ nav {
       }
     }
 
-    @media screen and (max-width:$mobileL) {
+    @media screen and (max-width:830px) {
       .nav__menu {
         display: none;
       }
@@ -192,7 +193,7 @@ header {
       h2 {
         max-width: 470px;
         font-family: bold;
-        font-size: 54px;
+        font-size: min(54px, max(27px + 2vw));
         line-height: 61px;
         margin: 0;
 
@@ -243,8 +244,12 @@ header {
 
     @media screen and (max-width: $mobileM) {
       .header__text {
+        text-align: center;
+
         .email {
           display: flex;
+          justify-content: center;
+          margin-top: 32px;
 
           input {
             max-width: 230px;
@@ -259,7 +264,7 @@ header {
       }
     }
 
-    @media screen and (max-width: $mobileS) {
+    @media screen and (max-width: 430px) {
       .header__text {
         max-width: 400px;
         margin: auto;
@@ -291,7 +296,6 @@ header {
 
         .email {
           display: flex;
-
           justify-content: center;
 
           input {
@@ -301,7 +305,7 @@ header {
 
           button {
             max-width: 120px;
-            padding: 7px 5px;
+            padding: 4px 4px;
             font-size: 14px;
           }
         }
@@ -645,6 +649,154 @@ main {
 
         a {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .things-to-do {
+    padding: 94px 32px 220px;
+    text-align: center;
+
+    h3 {
+      font-size: min(40px, max(20px + 2vw));
+      line-height: 45px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .to-do__list {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      gap: 96px;
+      flex-wrap: wrap;
+      margin-top: 58px;
+
+      .to-do__item {
+        max-width: 276px;
+
+        h4 {
+          font-size: 19px;
+          line-height: 45px;
+          font-weight: 700;
+          margin: 4px 0px 11px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 22px;
+        }
+      }
+    }
+
+    @media screen and (max-width:$mobileL) {
+      padding: 64px 32px 96px;
+      flex-wrap: nowrap;
+
+      .to-do__list {
+        gap: 32px;
+
+        .to-do__item {
+          h4 {
+            line-height: 20px;
+          }
+        }
+      }
+    }
+
+    //   @media screen and (max-width:)
+  }
+
+  .brands__slider {
+    padding: 88px 32px 105px;
+    background: $bg;
+    text-align: center;
+
+    h3 {
+      font-size: min(40px, max(20px + 2vw));
+      line-height: 45px;
+      font-weight: 700;
+      margin: 0 0px 73px;
+    }
+
+    .slider__section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      .slider__items {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+
+        .slider__item {
+          box-shadow: 0px 2px 4px rgba(192, 192, 192, 0.5);
+          border-radius: 0px 0px 7px 7px;
+          background: $white;
+
+          .slider__item__cover {
+            max-width: 320px;
+            max-height: 205px;
+            overflow: hidden;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .slider__item__content {
+            max-width: 320px;
+            background: $white;
+
+            .slider__item__title {
+              padding-top: 25px;
+              width: 100%;
+            }
+
+            p {
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 700;
+              color: $primary;
+              padding: 16px 32px 64px;
+              margin: 0;
+            }
+
+            @media screen and (max-width:$tablet) {
+              .slider__item__title {
+                padding-top: 16px;
+              }
+              p {
+                font-size: 17px;
+                padding: 16px 16px 32px;
+              }
+            }
+
+            @media screen and (max-width:$mobileL) {
+              p {
+                font-size: 16px;
+                line-height: 18px;
+                padding: 16px 8px 32px;
+              }
+            }
+          }
+
+          @media screen and (max-width:$mobileL) {
+            &:last-child {
+              display: none;
+            }
+          }
+
+          @media screen and (max-width:$mobileM) {
+            &:nth-last-child(2) {
+              display: none;
+            }
+          }
         }
       }
     }
