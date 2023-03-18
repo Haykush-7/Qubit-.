@@ -50,7 +50,7 @@ nav .nav .nav__btns svg {
   width: 35px;
   height: 35px;
 }
-nav .nav .nav__btns #book-a-demo {
+nav .nav .nav__btns .book-a-demo {
   padding: 9px 35px;
   color: #ffffff;
   background-color: #6f2cff;
@@ -75,7 +75,7 @@ nav .nav .nav__btns #login:hover {
     gap: 16px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1044px) {
   nav .nav .logo svg {
     width: 70px;
     height: 22px;
@@ -110,7 +110,7 @@ nav .nav .nav__btns #login:hover {
   nav .nav .nav__btns svg {
     display: block;
   }
-  nav .nav .nav__btns #book-a-demo,
+  nav .nav .nav__btns .book-a-demo,
   nav .nav .nav__btns #login {
     display: none;
   }
@@ -222,13 +222,292 @@ header .header .header__text p {
     justify-content: center;
   }
   header .header .header__text .email input {
-    max-width: 200px;
-    padding: 10px 13px;
+    max-width: 160px;
+    padding: 8px 8px;
   }
   header .header .header__text .email button {
-    max-width: 147px;
-    padding: 10px;
+    max-width: 120px;
+    padding: 7px 5px;
     font-size: 14px;
+  }
+}
+
+main .partner__brands {
+  max-width: 1072px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+main .partner__brands h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 35px 0 30px 0;
+  line-height: 30px;
+  color: #1c1c1c;
+  text-align: center;
+}
+main .partner__brands .brand__logos {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+main .partner__brands a {
+  display: block;
+  border-bottom: 2px solid #6f2cff;
+  text-decoration: none;
+  padding: 5px;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1044px) {
+  main .partner__brands .brand__logos {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+main .advantages {
+  max-width: 1170px;
+  margin: 80px auto;
+  display: flex;
+  align-items: center;
+}
+main .advantages .advantages__left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+}
+main .advantages .advantages__left h2 {
+  max-width: 401px;
+  font-size: 40px;
+  line-height: 45px;
+  color: #1c1c1c;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+main .advantages .advantages__left .advantages__left_buttons .book-a-demo {
+  padding: 9px 35px;
+  color: #ffffff;
+  background-color: #6f2cff;
+  border-radius: 20px;
+  border: 1px solid #6f2cff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 22px;
+}
+main .advantages .advantages__left .advantages__left_buttons a {
+  border-bottom: 2px solid #6f2cff;
+  text-decoration: none;
+  padding: 5px;
+  color: #1c1c1c;
+}
+main .advantages .advantages__left div span {
+  display: block;
+  color: #000000;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+main .advantages .advantages__left div a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  padding: 0px 2px;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+  text-decoration: none;
+}
+main .advantages .advantages__right {
+  width: 50%;
+  display: flex;
+}
+main .advantages .advantages__right .side {
+  border-left: 1px solid #E0E0E0;
+  width: 309px;
+  padding-left: 16.5px;
+  display: flex;
+  flex-direction: column;
+}
+main .advantages .advantages__right .side div {
+  height: 220px;
+}
+main .advantages .advantages__right .side div h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 45px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+main .advantages .advantages__right .side div span {
+  display: block;
+  color: #000000;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  max-width: 190px;
+}
+@media screen and (max-width: 768px) {
+  main .advantages {
+    flex-direction: column;
+    margin: 60px 0px 20px 0px;
+    padding: 0px 16px 0px 16px;
+    gap: 64px;
+  }
+  main .advantages .advantages__left {
+    width: 95%;
+    gap: 32px;
+    text-align: center;
+  }
+  main .advantages .advantages__left h2 {
+    margin: auto;
+  }
+  main .advantages .advantages__right {
+    width: 95%;
+    justify-content: space-around;
+  }
+  main .advantages .advantages__right .side {
+    width: 50%;
+  }
+  main .advantages .advantages__right .side div {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 420px) {
+  main .advantages .advantages__left h2 {
+    font-size: 32px;
+  }
+  main .advantages .advantages__left .advantages__left_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  main .advantages .advantages__left .advantages__left_buttons .book-a-demo {
+    width: 95%;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+  main .advantages .advantages__right .side div h3 {
+    font-size: 32px;
+    margin-bottom: 4px;
+  }
+  main .advantages .advantages__right .side div span {
+    font-size: 14px;
+  }
+}
+main .commerceAI {
+  text-align: center;
+  padding-bottom: 91px;
+}
+main .commerceAI h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 45px;
+  color: #000000;
+  margin-bottom: 22px;
+}
+main .commerceAI span {
+  color: #000000;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+}
+main .commerceAI .wrapper {
+  max-width: 1170px;
+  margin: auto;
+  display: flex;
+  align-content: center;
+  gap: 77px;
+  padding-top: 58px;
+}
+main .commerceAI .wrapper div {
+  max-width: 320px;
+}
+@media screen and (max-width: 768px) {
+  main .commerceAI {
+    padding-top: 32px;
+  }
+  main .commerceAI .wrapper {
+    gap: 64px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main .commerceAI .wrapper {
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 490px) {
+  main .commerceAI .wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main .easy-to-use {
+  background: #F5F5F5;
+  text-align: center;
+  padding: 94px 32px 115px 32px;
+}
+main .easy-to-use h3 {
+  font-size: min(40px, max(20px + 2vw));
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0px;
+}
+main .easy-to-use p {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  margin: 28px 0px 90px 0px;
+}
+main .easy-to-use .easy-to-use__cover img {
+  width: 100%;
+}
+main .easy-to-use .easy-to-use__btns {
+  margin-top: 76px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+main .easy-to-use .easy-to-use__btns a {
+  display: block;
+  text-decoration: none;
+  padding: 11px 54px 12px 54px;
+  border-radius: 30px;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 400;
+}
+main .easy-to-use .easy-to-use__btns a:first-of-type {
+  background: #6f2cff;
+  color: #ffffff;
+}
+main .easy-to-use .easy-to-use__btns a:last-of-type {
+  background: #ffffff;
+  color: #6f2cff;
+}
+@media screen and (max-width: 1044px) {
+  main .easy-to-use {
+    padding: 64px 32px;
+  }
+  main .easy-to-use p {
+    margin: 16px 0px 32px 0px;
+  }
+  main .easy-to-use .easy-to-use__btns {
+    margin-top: 32px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main .easy-to-use .easy-to-use__btns {
+    flex-wrap: wrap;
+  }
+  main .easy-to-use .easy-to-use__btns a {
+    width: 100%;
   }
 }
 
