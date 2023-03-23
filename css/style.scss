@@ -8,6 +8,7 @@ $darkPurple : #17002E;
 $footerPurple : #20003C;
 $borderGrey : #E0E0E0;
 $bg : #F5F5F5;
+$btnHover : #482396;
 
 
 $tablet : 1044px;
@@ -29,6 +30,22 @@ $br : 30px;
 
 body {
   font-family: "regular", sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .container {
@@ -56,14 +73,47 @@ nav {
         list-style-type: none;
 
         a {
+          position: relative;
           color: $lightBlack;
           text-decoration: none;
           font-size: 14px;
-          transition: .5s;
+          transition: 0.3s;
+
+          &::before {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: $primary;
+            position: absolute;
+            bottom: -10px;
+            border-radius: $br;
+            transition: 0.3s;
+          }
+
+          &::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: $primary;
+            position: absolute;
+            top: -10px;
+            right: 0px;
+            border-radius: $br;
+            transition: 0.3s;
+          }
 
           &:hover {
             color: $primary;
+
+            &::before {
+              width: 100%;
+            }
+
+            &::after {
+              width: 100%;
+            }
           }
+
         }
       }
     }
@@ -87,18 +137,28 @@ nav {
         border: 1px solid $primary;
         cursor: pointer;
         font-size: 14px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $btnHover;
+        }
       }
 
       #login {
+        display: block;
+        margin-left: 8px;
         text-decoration: none;
         color: $lightBlack;
         font-size: 14px;
         display: inline-block;
-        padding: 9px 15px;
-        transition: .5s;
+        padding: 7px 15px;
+        border: 2px solid $white;
+        border-radius: $br;
+        transition: 0.3s;
 
         &:hover {
           color: $primary;
+          border-color: $primary;
         }
       }
     }
@@ -163,7 +223,6 @@ nav {
         .book-a-demo,
         #login {
           display: none;
-
         }
       }
     }
@@ -208,6 +267,7 @@ header {
         input {
           max-width: 268px;
           height: 45px;
+          outline: none;
           background: $white;
           border: 1px solid $primary;
           border-radius: 27.5px 0px 0px 27.5px;
@@ -223,6 +283,12 @@ header {
           font-size: 15px;
           color: $white;
           border: 1px solid $primary;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background: $btnHover;
+          }
         }
       }
 
@@ -346,7 +412,12 @@ main {
       text-decoration: none;
       padding: 5px;
       color: $lightBlack;
+      transition: 0.3s;
       margin-bottom: 20px;
+
+      &:hover {
+        color: $primary;
+      }
     }
 
 
@@ -389,13 +460,23 @@ main {
           cursor: pointer;
           font-size: 14px;
           margin-right: 22px;
+          transition: 0.3s;
+
+          &:hover {
+            background: $btnHover;
+          }
         }
 
-        a {
+        .meet-customers {
           border-bottom: 2px solid $primary;
           text-decoration: none;
           padding: 5px;
           color: $lightBlack;
+          transition: 0.3s;
+
+          &:hover {
+            color: $primary;
+          }
         }
       }
 
@@ -595,17 +676,22 @@ main {
       font-size: 15px;
       line-height: 25px;
       font-weight: 400;
-      margin: 28px 0px 90px 0px;
+      margin: 28px 0px 32px 0px;
     }
 
     .easy-to-use__cover {
+      max-width: 600px;
+      margin: auto;
+
       img {
         width: 100%;
+        ;
+        display: block;
       }
     }
 
     .easy-to-use__btns {
-      margin-top: 76px;
+      margin-top: 32px;
       display: flex;
       justify-content: center;
       gap: 22px;
@@ -613,20 +699,31 @@ main {
       a {
         display: block;
         text-decoration: none;
-        padding: 11px 54px 12px 54px;
+        padding: 11px 54px;
         border-radius: $br;
         font-size: 14px;
         line-height: 15px;
         font-weight: 400;
+        transition: 0.3s;
 
         &:first-of-type {
           background: $primary;
-          color: $white
+          color: $white;
+          padding-top: 12px;
+
+          &:hover {
+            background: $btnHover;
+          }
         }
 
         &:last-of-type {
           background: $white;
           color: $primary;
+          border: 2px solid $white;
+
+          &:hover {
+            border-color: $primary;
+          }
         }
       }
     }
@@ -726,6 +823,24 @@ main {
       justify-content: center;
       gap: 12px;
 
+      .slider__arrow__icon {
+        cursor: pointer;
+
+        svg {
+          path {
+            transition: 0.3s;
+          }
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: $btnHover;
+            }
+          }
+        }
+      }
+
       .slider__items {
         display: flex;
         justify-content: space-between;
@@ -733,19 +848,34 @@ main {
 
         .slider__item {
           box-shadow: 0px 2px 4px rgba(192, 192, 192, 0.5);
-          border-radius: 0px 0px 7px 7px;
+          border-radius: 7px;
           background: $white;
+          cursor: pointer;
+          transition: 0.5s;
 
           .slider__item__cover {
             max-width: 320px;
             max-height: 205px;
             overflow: hidden;
+            border-radius: 7px 7px 0px 0px;
 
             img {
               display: block;
               width: 100%;
               height: 100%;
               object-fit: cover;
+              transition: 0.5s;
+              border-radius: 7px 7px 0px 0px;
+            }
+          }
+
+          &:hover {
+            box-shadow: 5px 5px 8px rgba(192, 192, 192, 0.8);
+
+            .slider__item__cover {
+              img {
+                transform: scale(1.1);
+              }
             }
           }
 
@@ -968,13 +1098,18 @@ main {
       }
 
       a {
-        padding: 11px 34px 14px;
+        padding: 12px 34px;
         color: $white;
         background: $primary;
         border-radius: $br;
         text-decoration: none;
         font-size: 14px;
         line-height: 14px;
+        transition: 0.3s;
+
+        &:hover {
+          background: $btnHover;
+        }
       }
     }
 
@@ -1065,6 +1200,7 @@ main {
         border: none;
         padding: 12px 66px 12px 20px;
         border-radius: 27.5px 0px 0px 27.5px;
+        outline: none;
 
         &::placeholder {
           font-size: 15px;
@@ -1081,6 +1217,12 @@ main {
         border-radius: 0px 27.5px 27.5px 0px;
         color: $white;
         border: none;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: $btnHover;
+        }
       }
     }
 
@@ -1125,22 +1267,42 @@ main {
         justify-content: center;
         gap: 32px;
         padding-bottom: 16px;
+
+        div {
+          a {
+            svg {
+              path {
+                transition: 0.5s;
+              }
+            }
+
+            &:hover {
+              svg {
+                path {
+                  fill: $primary;
+                }
+              }
+            }
+          }
+        }
+
+
       }
     }
   }
 }
 
 footer {
-  .footer__content__section {
+  .footer {
     padding: 57px 96px 32px;
     background: $footerPurple;
 
-    .footer__main-content__items {
+    .footer__content__items {
       display: flex;
       justify-content: center;
       gap: 32px;
 
-      .footer__main-content__item {
+      .footer__content__item {
         width: 192px;
 
         h4 {
@@ -1151,14 +1313,20 @@ footer {
           margin-bottom: 32px;
         }
 
-        a {
-          display: block;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 18px;
-          text-decoration: none;
-          color: $white;
-          padding-bottom: 12px;
+        ul {
+          list-style: none;
+
+          li {
+            a {
+              display: block;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              text-decoration: none;
+              color: $white;
+              padding-bottom: 16px;
+            }
+          }
         }
 
         &:nth-child(2) {
@@ -1188,11 +1356,11 @@ footer {
     @media screen and (max-width:$mobileL) {
       padding: 32px;
 
-      .footer__main-content__items {
+      .footer__content__items {
         flex-wrap: wrap;
         gap: 72px;
 
-        .footer__main-content__item {
+        .footer__content__item {
           max-width: 128px;
         }
       }
@@ -1201,7 +1369,7 @@ footer {
     @media screen and (max-width:$mobileS) {
       padding: 16px;
 
-      .footer__main-content__items {
+      .footer__content__items {
         gap: 32px
       }
     }
