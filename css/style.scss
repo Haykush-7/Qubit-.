@@ -67,53 +67,55 @@ nav {
 
     .nav__menu {
       display: flex;
-      gap: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      transition: all 0.5s ease;
 
       li {
-        list-style-type: none;
+        display: inline-block;
+        list-style: outside none none;
+        overflow: hidden;
 
         a {
+          padding: 5px 0;
+          color: #000;
           position: relative;
-          color: $lightBlack;
-          text-decoration: none;
           font-size: 14px;
-          transition: 0.3s;
+          display: inline-block;
+          letter-spacing: 1px;
+          margin: 0;
+          text-decoration: none;
+          transition: all 0.5s ease;
+
 
           &::before {
-            content: "";
-            width: 0%;
-            height: 2px;
-            background: $primary;
             position: absolute;
-            bottom: -10px;
-            border-radius: $br;
-            transition: 0.3s;
+            transition: all 0.35s ease;
+            top: 100%;
+            display: block;
+            height: 3px;
+            width: 100%;
+            content: "";
+            background-color: $primary;
           }
 
           &::after {
-            content: "";
-            width: 0%;
-            height: 2px;
-            background: $primary;
             position: absolute;
-            top: -10px;
-            right: 0px;
-            border-radius: $br;
-            transition: 0.3s;
-          }
-
-          &:hover {
+            transition: all 0.35s ease;
+            padding: 0.3em 0;
+            top: 100%;
+            left: 0;
+            content: attr(data-hover);
             color: $primary;
-
-            &::before {
-              width: 100%;
-            }
-
-            &::after {
-              width: 100%;
-            }
+            white-space: nowrap;
           }
+        }
 
+        &:hover {
+          a {
+            transform: translateY(-100%);
+          }
         }
       }
     }
@@ -165,14 +167,14 @@ nav {
 
     @media screen and (max-width:1085px) {
       .nav__menu {
-        gap: 16px;
+        gap: 12px;
+        white-space: nowrap;
       }
     }
 
     @media screen and (max-width: $tablet) {
       .logo {
         svg {
-
           width: 70px;
           height: 22px;
         }
@@ -184,10 +186,12 @@ nav {
         #book-a-demo {
           font-size: 13px;
           padding: 6px 20px;
+          white-space: nowrap;
         }
 
         #login {
           font-size: 13px;
+          white-space: nowrap;
           padding: 5px 2px;
         }
       }

@@ -39,47 +39,49 @@ nav .nav .nav__mobile_btn {
 }
 nav .nav .nav__menu {
   display: flex;
-  gap: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  transition: all 0.5s ease;
 }
 nav .nav .nav__menu li {
-  list-style-type: none;
+  display: inline-block;
+  list-style: outside none none;
+  overflow: hidden;
 }
 nav .nav .nav__menu li a {
+  padding: 5px 0;
+  color: #000;
   position: relative;
-  color: #1c1c1c;
-  text-decoration: none;
   font-size: 14px;
-  transition: 0.3s;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+  transition: all 0.5s ease;
 }
 nav .nav .nav__menu li a::before {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #6f2cff;
   position: absolute;
-  bottom: -10px;
-  border-radius: 30px;
-  transition: 0.3s;
+  transition: all 0.35s ease;
+  top: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #6f2cff;
 }
 nav .nav .nav__menu li a::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #6f2cff;
   position: absolute;
-  top: -10px;
-  right: 0px;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-nav .nav .nav__menu li a:hover {
+  transition: all 0.35s ease;
+  padding: 0.3em 0;
+  top: 100%;
+  left: 0;
+  content: attr(data-hover);
   color: #6f2cff;
+  white-space: nowrap;
 }
-nav .nav .nav__menu li a:hover::before {
-  width: 100%;
-}
-nav .nav .nav__menu li a:hover::after {
-  width: 100%;
+nav .nav .nav__menu li:hover a {
+  transform: translateY(-100%);
 }
 nav .nav .nav__btns {
   display: flex;
@@ -122,7 +124,8 @@ nav .nav .nav__btns #login:hover {
 }
 @media screen and (max-width: 1085px) {
   nav .nav .nav__menu {
-    gap: 16px;
+    gap: 12px;
+    white-space: nowrap;
   }
 }
 @media screen and (max-width: 1044px) {
@@ -136,9 +139,11 @@ nav .nav .nav__btns #login:hover {
   nav .nav .nav__btns #book-a-demo {
     font-size: 13px;
     padding: 6px 20px;
+    white-space: nowrap;
   }
   nav .nav .nav__btns #login {
     font-size: 13px;
+    white-space: nowrap;
     padding: 5px 2px;
   }
   nav .nav .nav__menu {
